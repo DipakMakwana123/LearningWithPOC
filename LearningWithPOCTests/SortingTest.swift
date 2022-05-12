@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import InterviewPreparation
+@testable import LearningWithPOC
 
 
 class SortingTest: XCTestCase {

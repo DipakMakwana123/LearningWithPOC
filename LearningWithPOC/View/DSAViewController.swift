@@ -273,27 +273,68 @@ class Algoritham {
     }
     
     func checkStringWeatherItHasPairBrackets(str:String) -> Bool{
-        
-        guard str.count % 2 == 0 else {return false }
         var stackArray = [String]()
         
         let  validBrackets = ["{":"}","[":"]","(":")"]
-        debugPrint(validBrackets.values)
         for char in str {
             if validBrackets.keys.contains(String(char)){
                 stackArray.append(String(char))
             }
             else if  validBrackets.values.contains(String(char)){
-                
-                if let lastChar = stackArray.last,  lastChar == String(char) {
+                debugPrint(validBrackets[stackArray.last ?? ""] ?? "")
+                if let lastChar = validBrackets[stackArray.last ?? ""],  lastChar == String(char) {
                     stackArray.removeLast()
                 }
             }
+            debugPrint(stackArray)
         }
-        debugPrint(stackArray)
         return stackArray.isEmpty ? true : false
-        
-        
-       
     }
+}
+class Sum {
+    
+    func findPairSum(arr:[Int],sum:Int) -> [[Int]]{
+        var resultArr = [[Int]]()
+        for (iIndex,num) in arr.enumerated() {
+            
+            for jIndex in iIndex+1..<arr.count {
+                if let nextValue = arr[safe:jIndex] {
+                    if sum == num + nextValue {
+                        resultArr.append([num,nextValue])
+                    }
+                }
+            }
+            debugPrint(resultArr)
+        }
+        
+        return resultArr
+    }
+}
+
+class Palindrom {
+    
+    
+    func checkNumberIsPalindom(number:Int) ->Bool{
+        
+        var reminder = 0
+        var originalNumber = number
+        var reversedNumber = 0
+        
+        while originalNumber > 0 {
+            reminder = originalNumber % 10
+            reversedNumber = reversedNumber * 10 + reminder
+            originalNumber = originalNumber/10
+        }
+        return reversedNumber == number ? true : false
+    }
+    
+    func checkStringIsPalindom(str:String) ->Bool{
+        var reversedString = ""
+        for char in str.reversed(){
+            reversedString.append(String(char))
+        }
+        debugPrint(reversedString.capitalized)
+        return reversedString.capitalized == str ? true : false
+    }
+
 }

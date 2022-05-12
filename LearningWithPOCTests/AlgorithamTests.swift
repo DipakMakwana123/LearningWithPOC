@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import InterviewPreparation
+@testable import LearningWithPOC
 
 class AlgorithamTests: XCTestCase {
 
@@ -42,6 +42,7 @@ class AlgorithamTests: XCTestCase {
 }
 
 class ValidString: XCTestCase {
+    
     func test_validBrackets_Case1(){
         let obj = Algoritham()
         let result = obj.checkStringWeatherItHasPairBrackets(str: "{}")
@@ -66,5 +67,50 @@ class ValidString: XCTestCase {
         let obj = Algoritham()
         let result = obj.checkStringWeatherItHasPairBrackets(str: "(")
         XCTAssertEqual(result, false)
+    }
+    func test_validBrackets_Case6(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "({})")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case7(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "({[]})")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case8(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "{([])}")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case9(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "[{()}]")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case10(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "[{(12)}]")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case11(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "[{(123)}]")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case12(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "[{(123)}123]")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case13(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "[{(123)}123]")
+        XCTAssertEqual(result, true)
+    }
+    func test_validBrackets_Case14(){
+        let obj = Algoritham()
+        let result = obj.checkStringWeatherItHasPairBrackets(str: "[1{2(3)}4]5")
+        XCTAssertEqual(result, true)
     }
 }

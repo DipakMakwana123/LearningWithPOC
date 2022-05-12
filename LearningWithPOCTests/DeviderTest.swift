@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import InterviewPreparation
+@testable import LearningWithPOC
 class DeviderTest: XCTestCase {
     
     func test_DivideTwoInteger_WithValidValues_Returns_Result(){
