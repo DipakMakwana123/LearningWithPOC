@@ -242,6 +242,18 @@ class SearchAlgoritham {
         }
         return false
     }
+    
+    func findValueFromMatrix(matrix:[[Int]],searchValue:Int) -> Bool{
+        
+        for subArr in matrix {
+            for num in subArr {
+                if num == searchValue {
+                    return true 
+                }
+            }
+        }
+        return false
+    }
 }
 
 class Algoritham {
