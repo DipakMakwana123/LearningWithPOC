@@ -1,6 +1,6 @@
 //
 //  LiveTVViewModal.swift
-//  InterviewPreparation
+//  LearningWithPOC
 //
 //  Created by Dipakbhai Valjibhai Makwana on 20/04/22.
 //

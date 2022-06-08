@@ -1,6 +1,6 @@
 //
 //  ErrorMessages.swift
-//  InterviewPreparation
+//  LearningWithPOC
 //
 //  Created by Apple on 24/03/22.
 //

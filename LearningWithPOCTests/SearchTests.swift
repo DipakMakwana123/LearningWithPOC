@@ -1,6 +1,6 @@
 //
 //  SearchTests.swift
-//  InterviewPreparationTests
+//  LearningWithPOCTests
 //
 //  Created by Dipakbhai Valjibhai Makwana on 10/05/22.
 //

@@ -1,6 +1,6 @@
 //
 //  PlayerView.swift
-//  InterviewPreparation
+//  LearningWithPOC
 //
 //  Created by Dipakbhai Valjibhai Makwana on 22/04/22.
 //

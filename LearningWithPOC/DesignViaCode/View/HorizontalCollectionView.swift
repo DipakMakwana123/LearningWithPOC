@@ -1,6 +1,6 @@
 //
 //  HorizontalCollectionView.swift
-//  InterviewPreparation
+//  LearningWithPOC
 //
 //  Created by Dipakbhai Valjibhai Makwana on 05/05/22.
 //

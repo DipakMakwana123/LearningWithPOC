@@ -1,6 +1,6 @@
 //
 //  SettingViewModal.swift
-//  InterviewPreparation
+//  LearningWithPOC
 //
 //  Created by Dipakbhai Valjibhai Makwana on 13/04/22.
 //

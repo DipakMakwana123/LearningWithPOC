@@ -1,6 +1,6 @@
 //
 //  SortingTest.swift
-//  InterviewPreparationTests
+//  LearningWithPOCTests
 //
 //  Created by Dipakbhai Valjibhai Makwana on 09/05/22.
 //

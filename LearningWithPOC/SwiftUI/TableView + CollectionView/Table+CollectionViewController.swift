@@ -1,6 +1,6 @@
 //
 //  Table+CollectionViewController.swift
-//  InterviewPreparation
+//  LearningWithPOC
 //
 //  Created by Dipakbhai Valjibhai Makwana on 11/04/22.
 //
