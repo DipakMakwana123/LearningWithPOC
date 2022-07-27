@@ -219,6 +219,4 @@ struct Constant {
     static let margin20: CGFloat = 20
     static let margin30: CGFloat = 30
     static let margin40: CGFloat = 40
-    
-    
 }
