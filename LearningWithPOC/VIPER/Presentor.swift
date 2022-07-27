@@ -30,6 +30,7 @@ class EmployeePresenter: EmployeePresenterProtocol{
     
     func getEmployee() {
         guard let result = interctor?.getEmployee() else {return }
+        
         result.sink { [weak self] items in
             guard let strongSelf = self else {return}
             debugPrint(items)

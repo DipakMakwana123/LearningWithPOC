@@ -50,7 +50,7 @@ extension ViperViewController: EmployeeViewProtocol {
         DispatchQueue.main.async {
             self.employee = employee
             self.tableView?.restore()
-            self.reloadData()
+            self.tableView?.reloadData()
         }
     }
     
@@ -58,10 +58,6 @@ extension ViperViewController: EmployeeViewProtocol {
         DispatchQueue.main.async {
             self.tableView?.setEmptyMessage(message)
         }
-    }
-    
-    func reloadData(){
-        self.tableView?.reloadData()
     }
 }
 
