@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     private var tableView: UITableView = {
         let tableView = UITableView()
-        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .singleLine
         tableView.registerCell(identifiers: [ListTableCell.identifier])
@@ -27,13 +26,11 @@ class ViewController: UIViewController {
         
     }()
 
-    /*
-     
-     */
     override func viewDidLoad() {
         super.viewDidLoad()
-     
         configureViews()
+        isPalindromeNumber()
+        nextLargestNumber()
         // apiOperations()
     }
     
@@ -46,8 +43,6 @@ class ViewController: UIViewController {
         tableView.configure(dataSource: self, delegate: self)
         tableView.configureView(superView: view)
         tableView.separatorStyle = .singleLine
-        
-        
     }
     
 }
@@ -72,14 +67,10 @@ extension ViewController {
             }
         })
     }
-    
-    
-    
     private func getData(){
         
     }
 }
-
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,8 +83,6 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 extension ViewController: UITableViewDelegate{
     
@@ -190,7 +179,7 @@ extension UIViewController{
 }
 
 //// SWift UI Navigation
-extension UIViewController{
+extension UIViewController {
     
     func navigateToSwiftUI_TableCollectionView(){
         let viewController = UIHostingController(rootView: TableCollectionView())
@@ -214,3 +203,84 @@ extension UIViewController{
 }
 
 
+extension ViewController {
+
+    func isPalindromeNumber() {
+        var number1 = 12321
+        let number2 = 12345
+
+        if isPalindrome(number1) {
+            print("\(number1) is a palindrome")
+        } else {
+            print("\(number1) is not a palindrome")
+        }
+
+        if isPalindrome(number2) {
+            print("\(number2) is a palindrome")
+        } else {
+            print("\(number2) is not a palindrome")
+        }
+    }
+
+    func nextLargestNumber() {
+        let n = 2314
+        if let nextLargest = nextLargestNumber(withSameDigitsAs: n) {
+            print("The next largest number with the same digits as \(n) is \(nextLargest)")
+        } else {
+            print("\(n) is already the largest possible number with the same digits")
+        }
+    }
+
+    func isPalindrome(_ number: Int) -> Bool {
+        var reversedNumber = 0
+        var originalNumber = number
+
+        while originalNumber > 0 {
+            let lastDigit = originalNumber % 10
+            reversedNumber = reversedNumber * 10 + lastDigit
+            originalNumber /= 10
+        }
+
+        return reversedNumber == number
+    }
+
+    func nextLargestNumber(withSameDigitsAs n: Int) -> Int? {
+        // Convert the integer to an array of digits
+        var digits: [Int] = []
+        var temp = n
+        while temp > 0 {
+            digits.insert(temp % 10, at: 0)
+            temp /= 10
+        }
+
+        // Find the first digit that is smaller than the digit to its right
+        var i = digits.count - 2
+        while i >= 0 && digits[i] >= digits[i+1] {
+            i -= 1
+        }
+
+        // If such a digit is not found, the number is already the largest possible
+        if i < 0 {
+            return nil
+        }
+
+        // Find the smallest digit to the right of A that is larger than A
+        var j = digits.count - 1
+        while digits[j] <= digits[i] {
+            j -= 1
+        }
+
+        // Swap A and B
+        let tempDigit = digits[i]
+        digits[i] = digits[j]
+        digits[j] = tempDigit
+
+        // Sort the digits to the right of the swapped digit A in ascending order
+        let suffix = digits[(i+1)...].sorted()
+
+        // Construct the resulting array of digits and convert it back to an integer
+        let resultDigits = digits[0...i] + suffix
+        let result = resultDigits.reduce(0) { $0 * 10 + $1 }
+        return result
+    }
+}
